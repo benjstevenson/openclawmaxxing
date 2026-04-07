@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenClaw Maxxing — Master the art of prompting</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Watercolor background layers -->
+  <div class="watercolor-bg">
+    <div class="wc-blob wc-blob-1"></div>
+    <div class="wc-blob wc-blob-2"></div>
+    <div class="wc-blob wc-blob-3"></div>
+    <div class="wc-blob wc-blob-4"></div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-claw">&#x2663;</span> OpenClaw<span class="logo-xx">XX</span>ing
+      </a>
+      <div class="nav-links">
+        <a href="#prompts">Prompts</a>
+        <a href="#skills">Skills</a>
+        <a href="https://claude.ai" target="_blank" class="nav-cta">Open Claude</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">The art of the prompt</p>
+      <h1 class="hero-title">Get more from<br /><em>OpenClaw</em></h1>
+      <p class="hero-sub">
+        A curated collection of battle-tested prompts and powerful skills
+        to unlock Claude's full potential.
+      </p>
+      <div class="hero-actions">
+        <a href="#prompts" class="btn btn-primary">Browse Prompts</a>
+        <a href="#skills" class="btn btn-ghost">Explore Skills</a>
+      </div>
+    </div>
+    <div class="hero-decoration">
+      <div class="ink-splat ink-splat-1"></div>
+      <div class="ink-splat ink-splat-2"></div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none"><path d="M0,20 Q360,0 720,20 Q1080,40 1440,20 L1440,40 L0,40 Z" /></svg>
+  </div>
+
+  <!-- Prompts -->
+  <section class="section prompts-section" id="prompts">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">Prompts</span>
+        <h2>Prompts that actually work</h2>
+        <p>Copy, paste, and adapt. These are the patterns that consistently produce exceptional results.</p>
+      </div>
+
+      <div class="card-grid" id="prompts-grid">
+
+        <div class="card" data-category="reasoning">
+          <div class="card-header">
+            <span class="card-icon">&#x1F9E0;</span>
+            <span class="card-category">Reasoning</span>
+          </div>
+          <h3>Step-by-Step Reasoner</h3>
+          <p class="card-desc">Forces Claude to reason through a problem before giving an answer — dramatically improves accuracy on complex tasks.</p>
+          <div class="card-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre>Before answering, think through this step by step. Show your reasoning in a &lt;thinking&gt; block, then give your final answer clearly labeled as &lt;answer&gt;.
+
+[Your question here]</pre>
+          </div>
+        </div>
+
+        <div class="card" data-category="writing">
+          <div class="card-header">
+            <span class="card-icon">&#x270D;&#xFE0F;</span>
+            <span class="card-category">Writing</span>
+          </div>
+          <h3>Voice Mimic</h3>
+          <p class="card-desc">Give Claude samples of your writing and it will match your style perfectly — tone, rhythm, vocabulary, everything.</p>
+          <div class="card-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre>Here are three examples of my writing:
+
+[SAMPLE 1]
+[SAMPLE 2]
+[SAMPLE 3]
+
+Now write [TASK] in exactly my voice. Match my sentence length, vocabulary level, and tone. Do not add filler or make it more formal.</pre>
+          </div>
+        </div>
+
+        <div class="card" data-category="code">
+          <div class="card-header">
+            <span class="card-icon">&#x1F4BB;</span>
+            <span class="card-category">Code</span>
+          </div>
+          <h3>Code Reviewer</h3>
+          <p class="card-desc">Ruthless but constructive code review. Catches bugs, style issues, and design problems you'd miss yourself.</p>
+          <div class="card-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre>Review this code as a senior engineer would. Focus on:
+1. Bugs or edge cases that could cause failures
+2. Security vulnerabilities
+3. Performance issues
+4. Readability and maintainability
+
+Be direct. Don't praise things that are merely acceptable. Suggest concrete fixes.
+
+```
+[YOUR CODE]
+```</pre>
+          </div>
+        </div>
+
+        <div class="card" data-category="research">
+          <div class="card-header">
+            <span class="card-icon">&#x1F50D;</span>
+            <span class="card-category">Research</span>
+          </div>
+          <h3>Devil's Advocate</h3>
+          <p class="card-desc">Force Claude to steelman the opposing view before presenting its own. Eliminates confirmation bias from AI-assisted research.</p>
+          <div class="card-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre>I'm going to share my position on [TOPIC]. Your job:
+
+1. First, argue AGAINST my position as convincingly as possible — find the strongest counterarguments
+2. Then identify which of my assumptions are weakest
+3. Finally, give me your honest synthesis
+
+My position: [YOUR POSITION]</pre>
+          </div>
+        </div>
+
+        <div class="card" data-category="productivity">
+          <div class="card-header">
+            <span class="card-icon">&#x26A1;</span>
+            <span class="card-category">Productivity</span>
+          </div>
+          <h3>Socratic Clarifier</h3>
+          <p class="card-desc">Before tackling any complex task, have Claude ask all the questions it needs. Prevents wasted effort on misunderstood tasks.</p>
+          <div class="card-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre>Before you attempt this task, ask me every clarifying question you need to do it perfectly. Don't start the actual task until I've answered. List all questions at once — don't ask one at a time.
+
+Task: [YOUR TASK]</pre>
+          </div>
+        </div>
+
+        <div class="card" data-category="writing">
+          <div class="card-header">
+            <span class="card-icon">&#x2702;&#xFE0F;</span>
+            <span class="card-category">Writing</span>
+          </div>
+          <h3>Brutal Editor</h3>
+          <p class="card-desc">Cut the fat from your writing. Claude acts as a ruthless editor focused on clarity and impact — no sugarcoating.</p>
+          <div class="card-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre>Edit this text for maximum clarity and impact. Rules:
+- Cut every word that doesn't earn its place
+- Replace weak verbs with strong ones
+- Eliminate all filler phrases ("it's worth noting that", "in order to", etc.)
+- Keep my voice — don't rewrite, just sharpen
+- Show me the edited version, then a list of every change you made and why
+
+[YOUR TEXT]</pre>
+          </div>
+        </div>
+
+        <div class="card" data-category="reasoning">
+          <div class="card-header">
+            <span class="card-icon">&#x1F3AF;</span>
+            <span class="card-category">Reasoning</span>
+          </div>
+          <h3>Decision Framework</h3>
+          <p class="card-desc">Structure ambiguous decisions with explicit tradeoffs. Great for career choices, product decisions, or any high-stakes call.</p>
+          <div class="card-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre>Help me think through this decision.
+
+Decision: [DECISION]
+Options: [LIST OPTIONS]
+My main goal: [WHAT MATTERS MOST]
+Constraints: [TIME/MONEY/OTHER LIMITS]
+
+Build a decision matrix. Weight each criterion by importance to me. Score each option honestly. Then give me your actual recommendation — don't hedge.</pre>
+          </div>
+        </div>
+
+        <div class="card" data-category="code">
+          <div class="card-header">
+            <span class="card-icon">&#x1F527;</span>
+            <span class="card-category">Code</span>
+          </div>
+          <h3>Rubber Duck Debugger</h3>
+          <p class="card-desc">Describe your bug and have Claude systematically walk through every possible cause — often catches what you've been blind to.</p>
+          <div class="card-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre>I have a bug. Walk me through it systematically.
+
+Expected behavior: [WHAT SHOULD HAPPEN]
+Actual behavior: [WHAT'S HAPPENING]
+What I've already tried: [YOUR ATTEMPTS]
+
+Code:
+```
+[YOUR CODE]
+```
+
+Hypothesize every possible root cause, ranked by likelihood. For each one, tell me exactly how to verify or rule it out.</pre>
+          </div>
+        </div>
+
+        <div class="card" data-category="productivity">
+          <div class="card-header">
+            <span class="card-icon">&#x1F4CB;</span>
+            <span class="card-category">Productivity</span>
+          </div>
+          <h3>Persona Injector</h3>
+          <p class="card-desc">Assign Claude a specific expert persona for your task. Unlocks domain-specific reasoning patterns and vocabulary.</p>
+          <div class="card-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre>You are [EXPERT TYPE — e.g. "a principal engineer at a FAANG company with 15 years of distributed systems experience"]. You think and communicate like this person — you use their vocabulary, make the tradeoffs they would make, and have their priorities.
+
+With that lens: [YOUR QUESTION OR TASK]</pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider section-divider-flip">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none"><path d="M0,20 Q360,40 720,20 Q1080,0 1440,20 L1440,0 L0,0 Z" /></svg>
+  </div>
+
+  <!-- Skills -->
+  <section class="section skills-section" id="skills">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">Skills</span>
+        <h2>Skills worth installing</h2>
+        <p>Extend Claude Code with custom skills. These are the ones that actually change how you work.</p>
+      </div>
+
+      <div class="skills-grid" id="skills-grid">
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <span class="skill-icon">&#x1F4C4;</span>
+            </div>
+            <div class="skill-meta">
+              <h3>docx</h3>
+              <span class="skill-tag">Document</span>
+            </div>
+          </div>
+          <p>Create, read, and edit Word documents (.docx) with full formatting — tables, headings, styles, and more. Triggers automatically when you mention Word docs.</p>
+          <div class="skill-command"><code>/docx</code></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <span class="skill-icon">&#x1F4CA;</span>
+            </div>
+            <div class="skill-meta">
+              <h3>xlsx</h3>
+              <span class="skill-tag">Spreadsheet</span>
+            </div>
+          </div>
+          <p>Open, edit, and generate Excel spreadsheets. Add columns, compute formulas, format cells, and produce charts — all from natural language.</p>
+          <div class="skill-command"><code>/xlsx</code></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <span class="skill-icon">&#x1F4CA;</span>
+            </div>
+            <div class="skill-meta">
+              <h3>pptx</h3>
+              <span class="skill-tag">Presentation</span>
+            </div>
+          </div>
+          <p>Build and edit PowerPoint presentations. Create slide decks, extract text from existing decks, or redesign layouts — with full fidelity to your content.</p>
+          <div class="skill-command"><code>/pptx</code></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <span class="skill-icon">&#x1F4D6;</span>
+            </div>
+            <div class="skill-meta">
+              <h3>pdf</h3>
+              <span class="skill-tag">Document</span>
+            </div>
+          </div>
+          <p>Extract text from PDFs, merge or split files, rotate pages, add watermarks, and generate new PDFs from scratch. The complete PDF toolkit.</p>
+          <div class="skill-command"><code>/pdf</code></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <span class="skill-icon">&#x23F0;</span>
+            </div>
+            <div class="skill-meta">
+              <h3>schedule</h3>
+              <span class="skill-tag">Automation</span>
+            </div>
+          </div>
+          <p>Schedule Claude to run tasks automatically on a cron schedule. Set up recurring agents, automated reports, or periodic maintenance — without leaving Claude Code.</p>
+          <div class="skill-command"><code>/schedule</code></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <span class="skill-icon">&#x1F501;</span>
+            </div>
+            <div class="skill-meta">
+              <h3>loop</h3>
+              <span class="skill-tag">Automation</span>
+            </div>
+          </div>
+          <p>Run any prompt or slash command on a recurring interval. Great for polling status, watching builds, or repeatedly checking on long-running processes.</p>
+          <div class="skill-command"><code>/loop</code></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <span class="skill-icon">&#x2728;</span>
+            </div>
+            <div class="skill-meta">
+              <h3>simplify</h3>
+              <span class="skill-tag">Code Quality</span>
+            </div>
+          </div>
+          <p>Review your changed code for reuse, quality, and efficiency — then fix any issues found. The automated code quality pass you'd otherwise skip.</p>
+          <div class="skill-command"><code>/simplify</code></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <span class="skill-icon">&#x1F3A8;</span>
+            </div>
+            <div class="skill-meta">
+              <h3>figma: implement-design</h3>
+              <span class="skill-tag">Design</span>
+            </div>
+          </div>
+          <p>Translate Figma designs into production-ready code with pixel-perfect fidelity. Pass a Figma URL and get real, usable component code back.</p>
+          <div class="skill-command"><code>/implement-design</code></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-claw">&#x2663;</span> OpenClaw<span class="logo-xx">XX</span>ing
+      </div>
+      <p class="footer-sub">Not affiliated with Anthropic. Just people who love Claude.</p>
+      <p class="footer-copy">&copy; 2026 OpenClawMaxxing</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
