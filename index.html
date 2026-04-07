@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OpenClaw Maxxing — Master the art of prompting</title>
+  <title>OpenClawMaxxing — Master the art of prompting</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,12 +33,12 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <span class="logo-claw">&#x2663;</span> OpenClaw<span class="logo-xx">XX</span>ing
+        <span class="logo-claw">&#x2663;</span> OpenClawM<span class="logo-xx">axx</span>ing
       </a>
       <div class="nav-links">
         <a href="#prompts">Prompts</a>
         <a href="#skills">Skills</a>
-        <a href="https://claude.ai" target="_blank" class="nav-cta">Open Claude</a>
+        <a href="https://openclaw.ai" target="_blank" class="nav-cta">Open OpenClaw</a>
       </div>
     </div>
   </nav>
@@ -74,65 +74,96 @@
       <div class="section-header">
         <span class="section-tag">Prompts</span>
         <h2>Prompts that actually work</h2>
-        <p>Copy, paste, and adapt. These are the patterns that consistently produce exceptional results.</p>
+        <p>Copy, paste, and adapt. These are the patterns — SOUL.md configs, pipeline templates, daily ops — that consistently get the most out of OpenClaw.</p>
       </div>
 
       <div class="card-grid" id="prompts-grid">
 
-        <div class="card" data-category="reasoning">
+        <div class="card" data-category="soul">
           <div class="card-header">
-            <span class="card-icon">&#x1F9E0;</span>
-            <span class="card-category">Reasoning</span>
+            <span class="card-icon">&#x1F9EC;</span>
+            <span class="card-category">SOUL.md</span>
           </div>
-          <h3>Step-by-Step Reasoner</h3>
-          <p class="card-desc">Forces Claude to reason through a problem before giving an answer — dramatically improves accuracy on complex tasks.</p>
+          <h3>The Power User SOUL.md</h3>
+          <p class="card-desc">The most important prompt you'll write. Drop this into your SOUL.md and customize it — it governs every single interaction your agent has.</p>
           <div class="card-prompt">
             <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-            <pre>Before answering, think through this step by step. Show your reasoning in a &lt;thinking&gt; block, then give your final answer clearly labeled as &lt;answer&gt;.
+            <pre># Identity
+You are my personal autonomous agent. You have opinions, preferences, and a point of view. You are allowed to disagree with me. You earn trust through competence, not compliance.
 
-[Your question here]</pre>
+# Communication
+- Skip all filler: no "Great question!", no "I'd be happy to help!", no "Certainly!"
+- Be direct. Lead with the answer, follow with reasoning if needed.
+- Max 3 bullet points unless a list is genuinely the right format.
+- When you're uncertain, say so explicitly — don't mask it with hedging language.
+- On messaging platforms: keep responses short enough to read in 10 seconds.
+
+# Behaviour
+- Attempt the task before asking for clarification — make reasonable assumptions and state them.
+- ALWAYS ask before any irreversible action (sending emails, deleting files, posting anything).
+- If a task has more than 3 steps, confirm the plan with me before executing.
+- Do not impersonate me in group chats or external communications without explicit approval.
+
+# Context
+- Timezone: [YOUR TIMEZONE]
+- Primary language: [YOUR LANGUAGE]
+- Current focus: [YOUR MAIN PROJECT OR GOAL]
+- Tools I use: [YOUR STACK — e.g. Notion, GitHub, Gmail, Slack]
+
+# Memory
+- Update MEMORY.md whenever I share a decision, preference, or important context.
+- Before starting any significant task, check MEMORY.md for relevant prior context.</pre>
           </div>
         </div>
 
-        <div class="card" data-category="writing">
+        <div class="card" data-category="automation">
           <div class="card-header">
-            <span class="card-icon">&#x270D;&#xFE0F;</span>
-            <span class="card-category">Writing</span>
+            <span class="card-icon">&#x1F9EC;</span>
+            <span class="card-category">Automation</span>
           </div>
-          <h3>Voice Mimic</h3>
-          <p class="card-desc">Give Claude samples of your writing and it will match your style perfectly — tone, rhythm, vocabulary, everything.</p>
+          <h3>Research → Action Pipeline</h3>
+          <p class="card-desc">The gold standard for autonomous research tasks. Forces the agent to plan, execute, validate, and stop for approval before doing anything permanent.</p>
           <div class="card-prompt">
             <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-            <pre>Here are three examples of my writing:
+            <pre">Goal: [SPECIFIC OUTCOME — e.g. "Find the 5 best cold outreach tools for B2B SaaS under $100/mo"]
 
-[SAMPLE 1]
-[SAMPLE 2]
-[SAMPLE 3]
+Steps:
+1. Search for current options using web search — do NOT rely on training data for pricing or features.
+2. For each candidate, gather: pricing, key features, pros/cons, and who it's best for.
+3. Build a comparison table sorted by value for my use case: [DESCRIBE YOUR USE CASE].
+4. Apply this filter: [YOUR CONSTRAINT — e.g. "must have API access and free trial"].
+5. STOP HERE. Present the shortlist and table to me before proceeding.
+6. After my approval, draft a personalized outreach message for each top pick explaining why I'm interested.
 
-Now write [TASK] in exactly my voice. Match my sentence length, vocabulary level, and tone. Do not add filler or make it more formal.</pre>
+Constraints:
+- Only use sources from the last 12 months.
+- If two sources contradict each other, prefer the more recent one and flag the discrepancy.
+- Do not send or publish anything without my explicit sign-off.</pre>
           </div>
         </div>
 
-        <div class="card" data-category="code">
+        <div class="card" data-category="soul">
           <div class="card-header">
-            <span class="card-icon">&#x1F4BB;</span>
-            <span class="card-category">Code</span>
+            <span class="card-icon">&#x1F4C5;</span>
+            <span class="card-category">Daily Ops</span>
           </div>
-          <h3>Code Reviewer</h3>
-          <p class="card-desc">Ruthless but constructive code review. Catches bugs, style issues, and design problems you'd miss yourself.</p>
+          <h3>Morning Briefing</h3>
+          <p class="card-desc">Set this as a recurring morning trigger. OpenClaw pulls everything together so you start the day oriented, not scrambling.</p>
           <div class="card-prompt">
             <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-            <pre>Review this code as a senior engineer would. Focus on:
-1. Bugs or edge cases that could cause failures
-2. Security vulnerabilities
-3. Performance issues
-4. Readability and maintainability
+            <pre">Give me my morning briefing. Structure it exactly like this:
 
-Be direct. Don't praise things that are merely acceptable. Suggest concrete fixes.
+**TODAY — [DATE, DAY OF WEEK]**
 
-```
-[YOUR CODE]
-```</pre>
+**Open loops** — anything from yesterday's conversations that wasn't resolved or completed
+
+**On deck** — my top 3 priorities for today based on what I've told you matters most, with a one-line reason for each
+
+**One thing to decide** — the most important decision I'm sitting on that I should resolve today
+
+**Heads up** — any time-sensitive items, deadlines, or things likely to go wrong if I don't act
+
+Keep the whole briefing under 200 words. Don't pad it. If there's nothing notable in a section, skip it entirely.</pre>
           </div>
         </div>
 
@@ -141,111 +172,166 @@ Be direct. Don't praise things that are merely acceptable. Suggest concrete fixe
             <span class="card-icon">&#x1F50D;</span>
             <span class="card-category">Research</span>
           </div>
-          <h3>Devil's Advocate</h3>
-          <p class="card-desc">Force Claude to steelman the opposing view before presenting its own. Eliminates confirmation bias from AI-assisted research.</p>
+          <h3>Competitive Intelligence Report</h3>
+          <p class="card-desc">A complete competitive teardown, not a shallow summary. Gives you the kind of intel that actually changes strategy.</p>
           <div class="card-prompt">
             <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-            <pre>I'm going to share my position on [TOPIC]. Your job:
+            <pre">Research [COMPETITOR NAME] as if you're a strategy consultant preparing a board-level briefing.
 
-1. First, argue AGAINST my position as convincingly as possible — find the strongest counterarguments
-2. Then identify which of my assumptions are weakest
-3. Finally, give me your honest synthesis
+Cover all of the following:
+1. **Business model** — how exactly do they make money, and at what margins if known
+2. **Positioning** — what they claim vs. what customers actually say (find reviews on G2, Reddit, Trustpilot)
+3. **Recent moves** — any product launches, funding, hires, or pivots in the last 6 months
+4. **Weak spots** — the top 3 complaints or failure modes that show up repeatedly in reviews
+5. **Who they're winning against** — what alternatives do customers mention switching from
+6. **Threat level to me** — given my context ([DESCRIBE YOUR BUSINESS]), rate them Low / Medium / High and explain why
 
-My position: [YOUR POSITION]</pre>
+Format: one punchy paragraph per section, no filler. End with a 3-bullet "so what" summary of what this means for my strategy.
+
+Only use sources from the last 12 months. Flag any finding you're less than 80% confident in.</pre>
           </div>
         </div>
 
-        <div class="card" data-category="productivity">
+        <div class="card" data-category="automation">
           <div class="card-header">
             <span class="card-icon">&#x26A1;</span>
+            <span class="card-category">Automation</span>
+          </div>
+          <h3>Weekly Review Agent</h3>
+          <p class="card-desc">Run this every Friday. OpenClaw combs through the week's context and gives you a structured retrospective without you having to think about what to review.</p>
+          <div class="card-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre">Run my weekly review for the past 7 days. Pull from everything in our conversation history and any memory you have access to.
+
+**Wins** — what actually got done that moved something meaningful forward (not just busy work)
+
+**Slippage** — what I said I'd do and didn't, with no editorializing — just the facts
+
+**Energy audit** — based on what I talked about, what seemed to energize me vs. drain me this week
+
+**Recurring friction** — any problem, bottleneck, or frustration that came up more than once
+
+**Next week's one thing** — the single highest-leverage thing I should prioritize, and why
+
+**Carry-forward** — open loops, undecided questions, or things I said I'd think about
+
+Don't soften the slippage section. I need accurate data, not encouragement. Keep it under 300 words total.</pre>
+          </div>
+        </div>
+
+        <div class="card" data-category="soul">
+          <div class="card-header">
+            <span class="card-icon">&#x1F6E1;&#xFE0F;</span>
+            <span class="card-category">Safety</span>
+          </div>
+          <h3>Guardrails Config Block</h3>
+          <p class="card-desc">Add this to your SOUL.md. Defines exactly what your agent can and can't do autonomously — the difference between a useful agent and a liability.</p>
+          <div class="card-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre"># Guardrails
+
+## Always ask before:
+- Sending any message, email, or notification to another person
+- Posting to any social platform or public channel
+- Deleting, moving, or renaming files
+- Making any purchase or initiating any financial transaction
+- Modifying shared documents or databases
+- Running shell commands that affect system state
+
+## You may act autonomously on:
+- Drafting content for my review (never publishing)
+- Reading and summarizing files, emails, or web content
+- Creating new local files or notes
+- Setting reminders for me (not others)
+- Searching the web or querying APIs for information
+
+## If you're unsure which category an action falls into:
+Stop. Ask. Err heavily on the side of caution. A paused task costs me seconds. An unintended send costs me trust.
+
+## Failure mode to avoid:
+Never complete a task in a way that "seems fine" to avoid bothering me. I prefer an interruption to a mistake I can't undo.</pre>
+          </div>
+        </div>
+
+        <div class="card" data-category="automation">
+          <div class="card-header">
+            <span class="card-icon">&#x1F4EC;</span>
+            <span class="card-category">Automation</span>
+          </div>
+          <h3>Email Triage & Draft Pipeline</h3>
+          <p class="card-desc">Point OpenClaw at your inbox and let it handle the cognitive load of triage. Drafts go to you for final approval — nothing sends automatically.</p>
+          <div class="card-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre">Process my inbox using this triage logic:
+
+**Tier 1 — Draft a reply now:**
+- Any email from [LIST KEY PEOPLE OR DOMAINS]
+- Anything with a clear question that I can answer in under 3 sentences
+- Anything with a deadline in the next 48 hours
+
+**Tier 2 — Flag for my attention:**
+- Requests that need a decision from me before anyone can move forward
+- Anything that seems time-sensitive but I haven't acknowledged yet
+
+**Tier 3 — Summarize and archive:**
+- Newsletters, digests, automated notifications
+- FYI threads where no action is needed from me
+
+For every Tier 1 email, draft a reply in my voice: direct, no filler, answers the actual question, ends with a clear next step if needed. Max 150 words per reply.
+
+Present all drafts to me before sending anything. Show me Tier 2 flags with one sentence of context each. Archive Tier 3 without showing me unless I ask.</pre>
+          </div>
+        </div>
+
+        <div class="card" data-category="research">
+          <div class="card-header">
+            <span class="card-icon">&#x1F9E0;</span>
+            <span class="card-category">Research</span>
+          </div>
+          <h3>Multi-Source Fact Check</h3>
+          <p class="card-desc">Before trusting any important claim, run this. Forces cross-referencing across multiple independent sources with explicit confidence scoring.</p>
+          <div class="card-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre">I need you to verify this claim: "[THE CLAIM YOU WANT CHECKED]"
+
+Research it using the following process:
+1. Find at least 3 independent sources — not the same outlet republishing the same wire story.
+2. Note the date of each source. Anything older than 18 months gets flagged as potentially stale.
+3. For each source, note: what they say, why they might be biased or limited, and how credible they are.
+4. If sources contradict each other, describe the disagreement explicitly — don't flatten it into a consensus that doesn't exist.
+
+Output:
+- **Verdict**: True / Mostly True / Contested / Misleading / False
+- **Confidence**: X% — explain what would change this score
+- **Best source**: the single most reliable reference, with a direct link
+- **Caveats**: anything I should know that the clean verdict doesn't capture</pre>
+          </div>
+        </div>
+
+        <div class="card" data-category="soul">
+          <div class="card-header">
+            <span class="card-icon">&#x1F4A1;</span>
             <span class="card-category">Productivity</span>
           </div>
-          <h3>Socratic Clarifier</h3>
-          <p class="card-desc">Before tackling any complex task, have Claude ask all the questions it needs. Prevents wasted effort on misunderstood tasks.</p>
+          <h3>Stuck Project Unsticker</h3>
+          <p class="card-desc">When a project has stalled and you're not sure why, this prompt diagnoses the real blocker and forces a concrete next action — even a tiny one.</p>
           <div class="card-prompt">
             <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-            <pre>Before you attempt this task, ask me every clarifying question you need to do it perfectly. Don't start the actual task until I've answered. List all questions at once — don't ask one at a time.
+            <pre">I'm stuck on this project and I need you to help me figure out why and what to do.
 
-Task: [YOUR TASK]</pre>
-          </div>
-        </div>
+Project: [NAME]
+What it is: [1-2 sentences]
+What "done" looks like: [THE ACTUAL FINISH LINE]
+Last thing I did on it: [MOST RECENT ACTION]
+How long it's been stalled: [TIMEFRAME]
+What I tell myself the blocker is: [YOUR CURRENT STORY]
 
-        <div class="card" data-category="writing">
-          <div class="card-header">
-            <span class="card-icon">&#x2702;&#xFE0F;</span>
-            <span class="card-category">Writing</span>
-          </div>
-          <h3>Brutal Editor</h3>
-          <p class="card-desc">Cut the fat from your writing. Claude acts as a ruthless editor focused on clarity and impact — no sugarcoating.</p>
-          <div class="card-prompt">
-            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-            <pre>Edit this text for maximum clarity and impact. Rules:
-- Cut every word that doesn't earn its place
-- Replace weak verbs with strong ones
-- Eliminate all filler phrases ("it's worth noting that", "in order to", etc.)
-- Keep my voice — don't rewrite, just sharpen
-- Show me the edited version, then a list of every change you made and why
+Now, challenge my story. Based on what I've described:
+1. What do you think the real blocker is? (It's often not what people say it is — common culprits: unclear next action, decision avoidance, fear of a specific outcome, perfectionism on one component)
+2. What's the smallest possible action I could take in the next 20 minutes that would technically constitute progress?
+3. What's one thing I should explicitly decide or let go of to remove the ambiguity that's keeping me stuck?
 
-[YOUR TEXT]</pre>
-          </div>
-        </div>
-
-        <div class="card" data-category="reasoning">
-          <div class="card-header">
-            <span class="card-icon">&#x1F3AF;</span>
-            <span class="card-category">Reasoning</span>
-          </div>
-          <h3>Decision Framework</h3>
-          <p class="card-desc">Structure ambiguous decisions with explicit tradeoffs. Great for career choices, product decisions, or any high-stakes call.</p>
-          <div class="card-prompt">
-            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-            <pre>Help me think through this decision.
-
-Decision: [DECISION]
-Options: [LIST OPTIONS]
-My main goal: [WHAT MATTERS MOST]
-Constraints: [TIME/MONEY/OTHER LIMITS]
-
-Build a decision matrix. Weight each criterion by importance to me. Score each option honestly. Then give me your actual recommendation — don't hedge.</pre>
-          </div>
-        </div>
-
-        <div class="card" data-category="code">
-          <div class="card-header">
-            <span class="card-icon">&#x1F527;</span>
-            <span class="card-category">Code</span>
-          </div>
-          <h3>Rubber Duck Debugger</h3>
-          <p class="card-desc">Describe your bug and have Claude systematically walk through every possible cause — often catches what you've been blind to.</p>
-          <div class="card-prompt">
-            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-            <pre>I have a bug. Walk me through it systematically.
-
-Expected behavior: [WHAT SHOULD HAPPEN]
-Actual behavior: [WHAT'S HAPPENING]
-What I've already tried: [YOUR ATTEMPTS]
-
-Code:
-```
-[YOUR CODE]
-```
-
-Hypothesize every possible root cause, ranked by likelihood. For each one, tell me exactly how to verify or rule it out.</pre>
-          </div>
-        </div>
-
-        <div class="card" data-category="productivity">
-          <div class="card-header">
-            <span class="card-icon">&#x1F4CB;</span>
-            <span class="card-category">Productivity</span>
-          </div>
-          <h3>Persona Injector</h3>
-          <p class="card-desc">Assign Claude a specific expert persona for your task. Unlocks domain-specific reasoning patterns and vocabulary.</p>
-          <div class="card-prompt">
-            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-            <pre>You are [EXPERT TYPE — e.g. "a principal engineer at a FAANG company with 15 years of distributed systems experience"]. You think and communicate like this person — you use their vocabulary, make the tradeoffs they would make, and have their priorities.
-
-With that lens: [YOUR QUESTION OR TASK]</pre>
+Be direct. Don't be gentle about it.</pre>
           </div>
         </div>
 
@@ -395,7 +481,7 @@ With that lens: [YOUR QUESTION OR TASK]</pre>
       <div class="disclaimer-body">
         <div class="disclaimer-block">
           <h4>What this site is</h4>
-          <p>OpenClawMaxxing is an independent, community-run resource dedicated to helping people get more out of Claude, the AI assistant made by Anthropic. We collect and share prompts, tips, and skill recommendations that we've found useful. That's it.</p>
+          <p>OpenClawMaxxing is an independent, community-run resource dedicated to helping people get more out of OpenClaw — the open-source autonomous AI agent created by Peter Steinberger. We collect and share prompts, SOUL.md templates, and configuration tips that we've found useful. That's it.</p>
         </div>
         <div class="disclaimer-block">
           <h4>No affiliation with any company</h4>
@@ -417,9 +503,9 @@ With that lens: [YOUR QUESTION OR TASK]</pre>
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-logo">
-        <span class="logo-claw">&#x2663;</span> OpenClaw<span class="logo-xx">XX</span>ing
+        <span class="logo-claw">&#x2663;</span> OpenClawM<span class="logo-xx">axx</span>ing
       </div>
-      <p class="footer-sub">An independent fan site. Not affiliated with Anthropic, OpenAI, or any AI company.</p>
+      <p class="footer-sub">An independent fan site. Not affiliated with OpenAI, the OpenClaw project, or any AI company.</p>
       <p class="footer-copy">&copy; 2026 OpenClawMaxxing &mdash; Community resource, no rights claimed over third-party trademarks.</p>
     </div>
   </footer>
