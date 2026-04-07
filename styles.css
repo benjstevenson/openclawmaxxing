@@ -107,6 +107,49 @@ body::before {
   opacity: 0.5;
 }
 
+/* ── Disclaimer Banner ────────────────────────────────────── */
+.disclaimer-banner {
+  position: relative;
+  z-index: 200;
+  background: rgba(30, 25, 15, 0.95);
+  border-bottom: 1px solid rgba(200,154,74,0.2);
+  padding: 10px 48px 10px 24px;
+  text-align: center;
+}
+
+.disclaimer-banner p {
+  font-size: 0.8rem;
+  color: var(--ink-7);
+  line-height: 1.5;
+}
+
+.disclaimer-banner strong {
+  color: var(--ink-8);
+  font-weight: 500;
+}
+
+.disclaimer-banner a {
+  color: var(--amber);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.banner-close {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--ink-6);
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 6px;
+  transition: color 0.2s;
+}
+.banner-close:hover { color: var(--ink-9); }
+
 /* ── Navigation ───────────────────────────────────────────── */
 .nav {
   position: fixed;
@@ -585,6 +628,44 @@ body::before {
   border: 1px solid rgba(200,154,74,0.2);
   padding: 4px 12px;
   border-radius: 100px;
+}
+
+/* ── Disclaimer Section ───────────────────────────────────── */
+.disclaimer-section {
+  background: var(--ink-2);
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.disclaimer-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.disclaimer-block h4 {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--ink-8);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.disclaimer-block p {
+  font-size: 0.82rem;
+  color: var(--ink-6);
+  line-height: 1.75;
+}
+
+.disclaimer-block strong {
+  color: var(--ink-7);
+  font-weight: 500;
+}
+
+.disclaimer-block a {
+  color: var(--amber);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* ── Footer ───────────────────────────────────────────────── */
